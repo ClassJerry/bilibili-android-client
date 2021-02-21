@@ -1,16 +1,17 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 Properties props = new Properties()
 props.load(new FileInputStream(file("configuration.properties")))
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 29
     buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "com.hotbitmapgg.ohmybilibili"
         minSdkVersion 21
-        targetSdkVersion 25
+        targetSdkVersion 29
         versionCode props["versionCode"] as int
         versionName props['versionName']
 
@@ -86,6 +87,7 @@ dependencies {
     implementation 'com.miguelcatalan:materialsearchview:1.4.0'
     implementation 'jp.wasabeef:glide-transformations:2.0.1'
     implementation 'com.jakewharton:butterknife:8.4.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
 
